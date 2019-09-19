@@ -2,10 +2,7 @@ package com.ics.demo;
 
 import com.ics.demo.models.University;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,4 +24,8 @@ public interface FeignRestClient {
     // patch
     @RequestMapping(method = RequestMethod.PATCH, value = "universities/{id}")
     University update(@PathVariable(name = "id") long id, @RequestBody University university);
+
+    // search by university name
+    @RequestMapping(method = RequestMethod.GET, value = "universities/search")
+    List<University> searchByName(@RequestParam String name);
 }
