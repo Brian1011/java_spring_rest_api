@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 //this is a must
-@Component
+//@Component
 public class TestingRest implements CommandLineRunner {
 
     private final FeignRestClient feignRestClient;
@@ -19,6 +19,7 @@ public class TestingRest implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        /*
         // feign
         List<University> universities = feignRestClient.getAllUniverisities();
         System.out.println("Feign Universities"+universities.toString());
@@ -42,5 +43,8 @@ public class TestingRest implements CommandLineRunner {
         // search by univerity name
         List<University> searchedUni = feignRestClient.searchByName("Kirinyaga university");
         System.out.println("Search results "+searchedUni);
+
+         */
+
     }
 }
