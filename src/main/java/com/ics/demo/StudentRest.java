@@ -18,5 +18,9 @@ public class StudentRest implements CommandLineRunner {
         MockStudent brian = studentFeignRestCLient.createStudent(new MockStudent("94006", "Brian"));
         System.out.println("New student is: "+brian);
 
+        // find by student number - 8
+        MockStudent mockStudent = studentFeignRestCLient.getStudentByStudentNUmber("94006");
+        System.out.println("student is"+mockStudent);
+
     }
 }

@@ -3,7 +3,7 @@ package com.ics.demo.models;
 import javax.persistence.Entity;
 
 public class MockStudent {
-    private Long studentId;
+    private Long id;
     private String studentNumber;
     private String firstName;
 
@@ -16,12 +16,12 @@ public class MockStudent {
         this.firstName = firstName;
     }
 
-    public Long getStudentId() {
-        return studentId;
+    public Long getid() {
+        return id;
     }
 
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
+    public void setid(Long id) {
+        this.id = id;
     }
 
     public String getStudentNumber() {
@@ -43,7 +43,7 @@ public class MockStudent {
     @Override
     public String toString() {
         return "MockStudent{" +
-                "studentId=" + studentId +
+                "id=" + id +
                 ", studentNumber='" + studentNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
                 '}';
