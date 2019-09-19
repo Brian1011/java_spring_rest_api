@@ -1,13 +1,11 @@
 package com.ics.demo;
 
+import com.ics.demo.models.MockAppointments;
 import com.ics.demo.models.MockLecturers;
 import com.ics.demo.models.MockStudent;
 import com.ics.demo.models.Student;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,4 +22,12 @@ public interface StudentFeignRestCLient {
     // get lecturers
     @RequestMapping(method = RequestMethod.GET, value = "lecturers")
     List<MockLecturers> getAllLecturers();
+
+    // create mock appointment
+    @RequestMapping(method = RequestMethod.POST, value = "appointments")
+    MockAppointments createAppointment(@RequestBody MockAppointments mockAppointments);
+
+    // confirm appointment
+    @RequestMapping(method = RequestMethod.PATCH, value = "appointments/{appointmentId}")
+    MockAppointments confirmAppointment(@PathVariable(name = "appointmentId") Long appointmentId, @RequestParam("studentId") Long studentId);
 }

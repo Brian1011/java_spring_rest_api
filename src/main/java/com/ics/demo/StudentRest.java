@@ -1,5 +1,6 @@
 package com.ics.demo;
 
+import com.ics.demo.models.MockAppointments;
 import com.ics.demo.models.MockLecturers;
 import com.ics.demo.models.MockStudent;
 import org.springframework.boot.CommandLineRunner;
@@ -29,5 +30,13 @@ public class StudentRest implements CommandLineRunner {
         List<MockLecturers> mockLecturers = studentFeignRestCLient.getAllLecturers();
         System.out.println("Lecturers " + mockLecturers);
 
+        // create a new appointment
+        MockAppointments appointments = studentFeignRestCLient.createAppointment(new MockAppointments(mockStudent.getid(),Integer.toUnsignedLong(1)));
+        System.out.println("Appoint "+ appointments);
+
+        // confirm appointment
+        //appointments.setStudentId(brian.getid());
+        MockAppointments confirm = studentFeignRestCLient.confirmAppointment(appointments.getId(),brian.getid());
+        System.out.println("Confirmed"+confirm);
     }
 }

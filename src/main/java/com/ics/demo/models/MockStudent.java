@@ -6,6 +6,7 @@ public class MockStudent {
     private Long id;
     private String studentNumber;
     private String firstName;
+    private String score;
 
     private MockStudent(){
 
@@ -40,12 +41,21 @@ public class MockStudent {
         this.firstName = firstName;
     }
 
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
         return "MockStudent{" +
                 "id=" + id +
                 ", studentNumber='" + studentNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
+                ", score='" + score + '\'' +
                 '}';
     }
 }
