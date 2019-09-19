@@ -1,8 +1,11 @@
 package com.ics.demo;
 
+import com.ics.demo.models.MockLecturers;
 import com.ics.demo.models.MockStudent;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class StudentRest implements CommandLineRunner {
@@ -21,6 +24,10 @@ public class StudentRest implements CommandLineRunner {
         // find by student number - 8
         MockStudent mockStudent = studentFeignRestCLient.getStudentByStudentNUmber("94006");
         System.out.println("student is"+mockStudent);
+
+        // get all lecturers
+        List<MockLecturers> mockLecturers = studentFeignRestCLient.getAllLecturers();
+        System.out.println("Lecturers " + mockLecturers);
 
     }
 }
