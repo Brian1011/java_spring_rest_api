@@ -33,6 +33,7 @@ public class StudentRest implements CommandLineRunner {
         // create a new appointment
         MockAppointments appointments = studentFeignRestCLient.createAppointment(new MockAppointments(mockStudent.getid(),Integer.toUnsignedLong(1)));
         System.out.println("Appoint "+ appointments);
+        // convert int to long 1 -> 1L
 
         // confirm appointment
         //appointments.setStudentId(brian.getid());
